@@ -1,13 +1,13 @@
+import { useGitHubRepo } from "./useGitHubRepo";
+
 const repositoryUrl =
   "https://github.com/hristianivanov/ITJob-Finder-ASP.NET-MVC";
 
-const metrics = [
+const staticMetrics = [
   { value: ".NET 8", label: "Modernized runtime" },
-  { value: "177", label: "Automated tests" },
+  { value: "199", label: "Automated tests" },
   { value: "CI ready", label: "Build and test workflow" },
   { value: "User-secrets", label: "Local secret management" },
-  { value: "Ownership", label: "Service-level checks" },
-  { value: "7.9 MB", label: "Static asset cleanup" },
 ];
 
 const audiences = [
@@ -102,7 +102,7 @@ const improvements = [
   },
   {
     title: "Delivery confidence",
-    text: "Migrated to .NET 8, expanded the test suite to 177 tests, and aligned CI with the runtime.",
+    text: "Migrated to .NET 8, expanded the test suite to 199 tests, and aligned CI with the runtime.",
   },
 ];
 
@@ -137,6 +137,13 @@ function SectionHeading({
 }
 
 function App() {
+  const repo = useGitHubRepo();
+
+  const metrics = [
+    ...staticMetrics,
+    { value: repo ? `Updated ${repo.updatedAt}` : "—", label: "Last activity" },
+  ];
+
   return (
     <>
       <header className="site-header">
@@ -272,7 +279,7 @@ function App() {
                 <li>.NET 8 runtime and aligned CI</li>
                 <li>User-secrets and safe configuration placeholders</li>
                 <li>Service-level ownership enforcement</li>
-                <li>177 tests and optimized EF Core queries</li>
+                <li>199 tests and optimized EF Core queries</li>
               </ul>
             </article>
           </div>
