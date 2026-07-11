@@ -1,17 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="DevHunter ASP.NET MVC project showcase for recruiters."
-    />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>DevHunter | Project Showcase</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevHunter Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: #0a0a0a; display: flex; align-items: center; justify-content: center; }
+    video { max-width: 100%; max-height: 100vh; display: block; }
+  </style>
+</head>
+<body>
+  <video controls autoplay muted loop>
+    <source src="media/devhunter-demo.mp4" type="video/mp4" />
+  </video>
+</body>
 </html>
